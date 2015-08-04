@@ -14,7 +14,7 @@
 */
 class Config {
 	// Data
-protected:
+protected:va
 	std::string m_Delimiter;  //!< separator between key and value
 	std::string m_Comment;    //!< separator between value and comments
 	std::map<std::string,std::string> m_Contents;  //!< extracted keys and values
@@ -73,7 +73,7 @@ public:
 
 
 /* static */
-template<class T>
+template<class T> //ostringstream  实现输入值 经过转换输出str
 std::string Config::T_as_string( const T& t )
 {
 	// Convert from a T to a string
@@ -85,7 +85,7 @@ std::string Config::T_as_string( const T& t )
 
 
 /* static */
-template<class T>
+template<class T> // 实现输入值，经过转换输出int
 T Config::string_as_T( const std::string& s )
 {
 	// Convert from a string to a T
@@ -98,7 +98,7 @@ T Config::string_as_T( const std::string& s )
 
 
 /* static */
-template<>
+template<> //模板函数的特例化
 inline std::string Config::string_as_T<std::string>( const std::string& s )
 {
 	// Convert from a string to a string
